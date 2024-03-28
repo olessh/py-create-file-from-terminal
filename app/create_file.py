@@ -21,10 +21,12 @@ def write_content(file_path: str) -> None:
 
 def create_file(file_name: str) -> None:
     if os.path.exists(file_name):
-        write_content(file_name)
+        mode = "a"
     else:
-        with open(file_name, "a"):
-            write_content(file_name)
+        mode = "w"
+
+    with open(file_name, mode):
+        write_content(file_name)
 
 
 def create_file_with_directory(directory_path: str, file_name: str) -> None:
