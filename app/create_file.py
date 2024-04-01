@@ -20,10 +20,7 @@ def write_content(file_path: str) -> None:
 
 
 def create_file(file_name: str) -> None:
-    if os.path.exists(file_name):
-        mode = "a"
-    else:
-        mode = "w"
+    mode = "a" if os.path.exists(file_name) else "w"
 
     with open(file_name, mode):
         write_content(file_name)
